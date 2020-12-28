@@ -7,7 +7,7 @@ let app:Application = require('../app')
 
 describe('user actions', () => {
     test('get version', async () => {
-        const response = await request(app).get('/user')
+        const response = await request(app).get('/users/version')
         expect(response.statusCode).toBe(200)
     })
 
