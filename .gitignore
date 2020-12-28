@@ -1,0 +1,8 @@
+/node_modules/
+.idea
+node_modules
+.vscode
+.npmrc
+app/newrelic_agent.log
+app/coverage
+app/coverage_jest
