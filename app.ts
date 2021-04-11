@@ -1,13 +1,9 @@
-import { Request, Response, NextFunction, ErrorRequestHandler } from 'express';
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
-var usersRouter = require('./routes/users');
-
-var app = express();
-
+var usersRouter = require('./routes/routes');
+const app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -17,5 +13,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/users', usersRouter);
+app.use(require('body-parser').json())
 
 module.exports = app;

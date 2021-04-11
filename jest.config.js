@@ -13,6 +13,8 @@ module.exports = {
       tsConfigFile: 'tsconfig.json'
     }
   },
-  transformIgnorePatterns: ['<rootDir>/node_modules/'],
+  rootDir: '.',
+  transformIgnorePatterns: ['./node_modules/'],
+  coverageDirectory: './coverage',
   testPathIgnorePatterns: [...defaults.testPathIgnorePatterns, '<rootDir>/dist/', '<rootDir>/config/', '/mockData/']
 }
