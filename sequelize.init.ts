@@ -41,5 +41,4 @@ const createSequelize = (config: any) => {
     });
 }
 
-
 export const database = getInstance((require('./database.config').config))
