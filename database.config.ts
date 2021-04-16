@@ -3,7 +3,7 @@ const glob = require('glob')
 export const config = {
     username: 'root',
     password: 'pswd',
-    database: 'manager',
+    database: 'demo',
     host: 'localhost',
     port: '3307',
     dialect: 'mysql',
