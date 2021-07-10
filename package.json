@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "ts-node ./bin/www.ts",
-    "test": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate && jest --runInBand"
+    "db-setup": "npx sequelize-cli db:drop && npx sequelize-cli db:create && npx sequelize-cli db:migrate",
+    "test": "jest --runInBand"
   },
   "dependencies": {
     "@types/express": "^4.17.9",
