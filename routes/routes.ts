@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-
-//router.get('PATH', controller)
+import * as controller from '../modules/user/UserController'
+router.get('/users', controller.getUsers)
+router.post('/users', controller.createUser)
 
 module.exports = router;
