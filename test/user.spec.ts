@@ -1,6 +1,7 @@
 import {formatter} from "../modules/user/Formatter";
 import {mockPost} from "./httpMock";
 import {execSync} from "child_process";
+import {runWithCLI} from "../commandLine";
 
 const request = require('supertest')
 const database = require('../sequelize.init').database
@@ -77,15 +78,14 @@ describe('users', () => {
 	test('get users via CLI', async () => {
 		// arrange
 		await initUsers(mockedUsers)
+		process.argv = ['', '', 'GET']
 
 		//act
-		const actual = execSync('npx ts-node commandLine.ts GET')
+		const actual = await runWithCLI()
 
 		// assert
-		expect(actual.toString().includes(mockedUsers[0].first)).toBeTruthy()
-		expect(actual.toString().includes(mockedUsers[1].last)).toBeTruthy()
-		expect(actual.toString().includes(mockedUsers[0].first)).toBeTruthy()
-		expect(actual.toString().includes(mockedUsers[1].last)).toBeTruthy()
+		expect(actual)
+			.toMatchObject(mockedUsers)
 	})
 
 	// test('verify user account creation side effect', async () => {
