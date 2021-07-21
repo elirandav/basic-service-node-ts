@@ -6,7 +6,25 @@ _"I get paid for code that works, not for tests, so my philosophy is to test as 
 
 ### Part 2
 
-**Requirement 1:** when getting users the full name length should be less than 10
+Hints:
+
+- Side-effects - Any source of inputs or outputs for a method that are not part of the arguments or return value
+
+**Requirement 1:** call 3rd party service
+
+Create a new account, when creating a new user. for user id x, the 3rd party request:
+```
+POST /account
+body {userId: x}
+```
+
+**Requirement 2:** get users via CLI
+
+get users with the following command:
+
+`<CLI> GET`
+
+**Requirement 3:** when getting users the full name length should be less than 10
 
 Examples:
 
@@ -20,21 +38,3 @@ Examples:
 
 - Create a new class/method and imagine the integration?
 - Emerge the code for a user request? Integration test
-
-Hints:
-
-- Side-effects - Any source of inputs or outputs for a method that are not part of the arguments or return value
-
-**Requirement 2:** call 3rd party service
-
-Create a new account, when creating a new user. for user id x, the 3rd party request:
-```
-POST /account
-body {userId: x}
-```
-
-**Requirement 3:** get users via CLI
-
-get users with the following command:
-
-`<CLI> GET`
